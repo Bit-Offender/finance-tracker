@@ -2,7 +2,8 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { Button } from '../ui/button'
+import { ArrowRight } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,8 +17,6 @@ import {
 
 const HomeNav = () => {
 
-  const[isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className='md:rounded-full md:sticky md:top-3 bg-slate-700/30 backdrop-blur-lg  md:flex md:items-center md:justify-between mt-3 mr-5 ml-5'>
         <div className='p-2'>
@@ -26,6 +25,13 @@ const HomeNav = () => {
         <div>
           <NavigationMenu className='text-white p-2 flex-col'>
             <NavigationMenuList className='flex justify-around'>
+              <NavigationMenuItem className='px-5'>
+                <NavigationMenuLink asChild>
+                  <Link href='/sign-up'>
+                    <Button className='hover:bg-white hover:text-black transition-all duration-300 rounded-full group/button'>Get Started <ArrowRight  className='group-hover/button:translate-x-1 transition-all duration-300'/></Button>
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
                <NavigationMenuItem className='px-5'>
                 <NavigationMenuLink asChild>
                   <Link href='/' className='flex flex-col group/home opacity-90 hover:opacity-100 transition-all duration-300'>Home
@@ -36,7 +42,7 @@ const HomeNav = () => {
               <NavigationMenuItem className='px-5'>
                 <NavigationMenuLink asChild>
                   <Link href='/about' className='flex flex-col group/about opacity-90 hover:opacity-100 transition-all duration-300'>About
-                    <span className='bg-[#439A86] group-focus/about:w-full w-0 h-0.5 group-hover/about:w-full transition-all duration-300'></span>
+                    <span className='bg-[#439A86] w-0 h-0.5 group-focus/about:w-full group-hover/about:w-full transition-all duration-300'></span>
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>

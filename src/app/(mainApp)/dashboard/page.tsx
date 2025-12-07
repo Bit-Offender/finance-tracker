@@ -1,8 +1,10 @@
+'use client'
+
 import React from 'react'
 
 const dashboard = () => {
   return (
-       <div className='min-h-screen'>dashboard</div>
+       <div className='min-h-screen'>Logged In</div>
   )
 }
 

@@ -23,7 +23,7 @@ const CallToAction = () => {
             <div className='flex flex-col md:gap-14 gap-16 items-center justify-center bg-gradient-to-br min-h-[423px] rounded-3xl from-[#439A86] to-[#2E4482] m-16'>
                 <h1 className='font-bold tracking-wider px-5 text-center text-4xl md:text-6xl max-w-2/4'>Start Tracking Smarter Today</h1>
                 <p className='font-[roboto] text-center px-5 max-w-1/2 md:text-3xl'>Take control of your finances with a clean, simple dashboard built for clarity.</p>
-                <Link href='/'>
+                <Link href='/sign-up'>
                     <Button className='rounded-full md:text-2xl text-xl p-6 md:p-7 transition-all duration-300 hover:bg-white hover:text-black'>GET STARTED</Button>
                 </Link>
             </div>
