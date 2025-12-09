@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from 'next/font/google';
 import HomeNav from "@/components/Landing/HomeNav";
 import Footer from "@/components/Landing/Footer";
-import '../globals.css';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: "FinTrack",
@@ -22,13 +22,11 @@ export default function LandingLayout({
   return (
     <html lang="en" suppressHydrationWarning className={outfit.className}>
       <body className="min-h-screen bg-gradient-to-b from-[#101628] to-[#161F38]">
-
         <HomeNav />
         
         {children}
 
         <Footer />
-
       </body>
     </html>
   );

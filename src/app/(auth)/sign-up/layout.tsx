@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from 'next/font/google';
-import "../globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import "../../globals.css";
 
 export const metadata: Metadata = {
   title: "FinTrack",
@@ -12,14 +13,16 @@ const outfit = Outfit({
   weight: '400',
 })
 
-export default function AppLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-[#101628] to-[#161F38] ${outfit.className}`}>
-      {children}
-    </div>
+    <ClerkProvider> 
+        <div className={`min-h-screen bg-gradient-to-b from-[#101628] to-[#161F38] ${outfit.className}`}>
+            {children}
+        </div>
+    </ClerkProvider>
   );
 }
