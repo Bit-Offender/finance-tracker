@@ -22,11 +22,9 @@ export default function LandingLayout({
   return (
     <html lang="en" suppressHydrationWarning className={outfit.className}>
       <body className="min-h-screen bg-gradient-to-b from-[#101628] to-[#161F38]">
-        <HomeNav />
         
         {children}
 
-        <Footer />
       </body>
     </html>
   );

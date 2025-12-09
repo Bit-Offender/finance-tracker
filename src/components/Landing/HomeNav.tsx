@@ -18,7 +18,7 @@ import {
 const HomeNav = () => {
 
   return (
-    <nav className='md:rounded-full md:sticky md:top-3 bg-slate-700/30 backdrop-blur-lg  md:flex md:items-center md:justify-between mt-3 mr-5 ml-5'>
+    <nav className='md:rounded-full md:sticky md:top-3 bg-slate-700/30 backdrop-blur-lg  md:flex md:items-center md:justify-between mt-3 mr-5 ml-5 border-2 border-white/10'>
         <div className='p-2'>
           <Link href='/' className='text-xl font-bold text-[#439A86] ml-3'>FinTrack</Link>
         </div>
@@ -41,21 +41,21 @@ const HomeNav = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem className='px-5'>
                   <NavigationMenuLink asChild>
-                    <Link href='/about' className='flex flex-col group/about opacity-90 hover:opacity-100 transition-all duration-300'>About
+                    <Link href='/marketing/about' className='flex flex-col group/about opacity-90 hover:opacity-100 transition-all duration-300'>About
                       <span className='bg-[#439A86] w-0 h-0.5 group-focus/about:w-full group-hover/about:w-full transition-all duration-300'></span>
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem className='px-5'>
                   <NavigationMenuLink asChild>
-                    <Link href='/contact' className='flex flex-col group/contact opacity-90 hover:opacity-100 transition-all duration-300'>Contact Us
+                    <Link href='/marketing/contact' className='flex flex-col group/contact opacity-90 hover:opacity-100 transition-all duration-300'>Contact Us
                       <span className='bg-[#439A86] w-0 h-0.5 group-focus/contact:w-full group-hover/contact:w-full transition-all duration-300'></span>
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
                 <NavigationMenuItem className='px-5'>
                   <NavigationMenuLink asChild>
-                    <Link href='/support' className='flex flex-col group/support opacity-90 hover:opacity-100 transition-all duration-300'>Support Us
+                    <Link href='/marketing/support' className='flex flex-col group/support opacity-90 hover:opacity-100 transition-all duration-300'>Support Us
                       <span className='bg-[#439A86] w-0 h-0.5 group-focus/support:w-full group-hover/support:w-full transition-all duration-300'></span>
                     </Link>
                   </NavigationMenuLink>
