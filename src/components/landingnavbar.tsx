@@ -21,7 +21,7 @@ const LandingNavbar = () => {
   const { isSignedIn } = useUser();
 
   return (
-    <nav className='md:rounded-full md:sticky md:top-3 bg-slate-700/30 backdrop-blur-lg  md:flex md:items-center md:justify-between mt-3 mr-5 ml-5 border-2 border-white/10'>
+    <nav className='md:rounded-full md:sticky md:top-3 bg-slate-700/30 backdrop-blur-lg md:flex md:items-center md:justify-between pt-3 mr-5 ml-5 border-2 border-white/10'>
         <div className='p-2'>
           <Link href='/' className='text-xl font-bold text-[#439A86] ml-3'>FinTrack</Link>
         </div>

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,9 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.className}`}>
-          {children}
+      <html lang="en" suppressHydrationWarning className="m-0 p-0">
+        <body className={`${inter.className} m-0 p-0`} suppressHydrationWarning>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <SidebarProvider>
+              {children}
+            </SidebarProvider>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
