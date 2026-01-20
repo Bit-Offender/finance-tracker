@@ -1,4 +1,4 @@
-import SidebarDashboard  from "@/components/dashboard/SidebarDashboard";
+import SidebarDashboard from "@/components/dashboard/SidebarDashboard";
 import Navbar from "@/components/dashboard/Navbar";
 import { SidebarInset } from "@/components/ui/sidebar";
 
