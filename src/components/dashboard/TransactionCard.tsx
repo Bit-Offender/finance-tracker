@@ -23,7 +23,7 @@ export default function TransactionCard() {
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
               <Label htmlFor="amount">Add a new transaction</Label>
-              <Input id="amount" placeholder="Hi" required />
+              <Input id="amount" type="number" placeholder="Eg. ₹50.00 ..." required />
             </div>
             <div className="grid gap-2">
               <div className="flex items-center">
