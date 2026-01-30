@@ -16,7 +16,6 @@ import TransactionCard from "@/components/dashboard/TransactionCard";
 import { TrendingUp, TrendingDown, Wallet, Plus } from "lucide-react";
 
 const Dashboard = () => {
-
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8 space-y-6">
       {/* HEADER - Responsive flex direction */}
@@ -29,7 +28,7 @@ const Dashboard = () => {
             Track your income and expenses
           </p>
         </div>
-        
+
         <Dialog>
           <DialogTrigger asChild>
             <Button size="lg" className="w-full sm:w-auto">
@@ -48,7 +47,11 @@ const Dashboard = () => {
                   Cancel
                 </Button>
               </DialogClose>
-              <Button type="submit" form="transaction-form" className="w-full sm:w-auto">
+              <Button
+                type="submit"
+                form="transaction-form"
+                className="w-full sm:w-auto"
+              >
                 Add Transaction
               </Button>
             </DialogFooter>
@@ -72,9 +75,7 @@ const Dashboard = () => {
             <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400">
               ₹0.00
             </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              This month
-            </p>
+            <p className="text-xs text-muted-foreground mt-1">This month</p>
           </CardContent>
         </Card>
 
@@ -92,9 +93,7 @@ const Dashboard = () => {
             <div className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-red-400">
               ₹0.00
             </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              This month
-            </p>
+            <p className="text-xs text-muted-foreground mt-1">This month</p>
           </CardContent>
         </Card>
 
@@ -199,11 +198,11 @@ const Dashboard = () => {
                 </Button>
               </DialogTrigger>
             </Dialog>
-            
+
             <Button className="w-full" size="lg" variant="outline">
               View Reports
             </Button>
-            
+
             <Button className="w-full" size="lg" variant="outline">
               Manage Categories
             </Button>

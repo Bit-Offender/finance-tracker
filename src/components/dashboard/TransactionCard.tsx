@@ -11,19 +11,62 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { useSupabaseClient } from "@/lib/supabase/client";
+import { useState } from "react";
 
 export default function TransactionCard() {
+  const supabase = useSupabaseClient();
+
+  const [amount, setAmount] = useState("0");
+  const [transactionType, setTransactionType] = useState<"INCOME" | "EXPENSE">(
+    "INCOME",
+  );
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    const newTransaction = {
+      amount: parseFloat(amount),
+      type: transactionType,
+    };
+
+    console.log("Attempting to insert:", newTransaction);
+
+    const { data, error } = await supabase
+      .from("transactions")
+      .insert(newTransaction)
+      .select();
+
+    if (error) {
+      console.error("Error uploading:", error);
+      alert(`Error: ${error.message}`);
+    } else {
+      console.log("Successfully inserted:", data);
+      alert("Transaction added successfully!");
+      setAmount("0");
+      setTransactionType("INCOME");
+    }
+  };
+
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
         <CardTitle>Add a Transaction</CardTitle>
       </CardHeader>
       <CardContent>
-        <form>
+        <form onSubmit={handleSubmit} id="transaction-form">
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
               <Label htmlFor="amount">Add a new transaction</Label>
-              <Input id="amount" type="number" placeholder="Eg. ₹50.00 ..." required />
+              <Input
+                id="amount"
+                type="number"
+                step="0.01"
+                placeholder="Eg. ₹50.00 ..."
+                required
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
             </div>
             <div className="grid gap-2">
               <div className="flex items-center">
@@ -31,14 +74,24 @@ export default function TransactionCard() {
               </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button>
-                    <span className="capitalize">Select Type</span>
+                  <Button type="button">
+                    <span className="capitalize">
+                      {transactionType.toLowerCase()}
+                    </span>
                     <ChevronDown />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
-                  <DropdownMenuItem>Income</DropdownMenuItem>
-                  <DropdownMenuItem>Expense</DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setTransactionType("INCOME")}
+                  >
+                    Income
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => setTransactionType("EXPENSE")}
+                  >
+                    Expense
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
