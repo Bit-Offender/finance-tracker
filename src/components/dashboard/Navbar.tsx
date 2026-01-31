@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   DropdownMenu,
@@ -31,13 +31,22 @@ const Navbar = () => {
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem className="hover:cursor-pointer" onClick={() => setTheme("light")}>
+              <DropdownMenuItem
+                className="hover:cursor-pointer"
+                onClick={() => setTheme("light")}
+              >
                 Light
               </DropdownMenuItem>
-              <DropdownMenuItem className="hover:cursor-pointer" onClick={() => setTheme("dark")}>
+              <DropdownMenuItem
+                className="hover:cursor-pointer"
+                onClick={() => setTheme("dark")}
+              >
                 Dark
               </DropdownMenuItem>
-              <DropdownMenuItem className="hover:cursor-pointer" onClick={() => setTheme("system")}>
+              <DropdownMenuItem
+                className="hover:cursor-pointer"
+                onClick={() => setTheme("system")}
+              >
                 System
               </DropdownMenuItem>
             </DropdownMenuContent>
