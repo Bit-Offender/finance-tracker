@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import React from "react";
 import { Button } from "../ui/button";
-import { Moon, Sidebar, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { UserButton } from "@clerk/nextjs";
 import { SidebarTrigger } from "../ui/sidebar";

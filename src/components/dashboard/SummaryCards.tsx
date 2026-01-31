@@ -6,7 +6,7 @@ import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { useSupabaseClient } from "@/lib/supabase/client";
 import { useUser } from "@clerk/nextjs";
 
-const SummaryCards = () => {
+const SummaryCards = ({ isClicked }) => {
   const supabase = useSupabaseClient();
   const { user } = useUser();
 
@@ -16,7 +16,7 @@ const SummaryCards = () => {
 
   useEffect(() => {
     if (!user) return;
-
+    
     const fetchTransactions = async () => {
       const now = new Date();
       const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
@@ -59,7 +59,7 @@ const SummaryCards = () => {
     };
 
     fetchTransactions();
-  }, [user]);
+  }, [supabase, user, isClicked]);
 
   const savings = incomeAmount - expenseAmount;
   const savingsRate =

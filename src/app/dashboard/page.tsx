@@ -16,8 +16,12 @@ import SummaryCards from "@/components/dashboard/SummaryCards";
 import Charts from "@/components/dashboard/Charts";
 import RecentTransactions from "@/components/dashboard/RecentTransactions";
 import QuickActions from "@/components/dashboard/QuickActions";
+import { useState } from "react";
 
 const Dashboard = () => {
+
+  const[isClicked, setIsClicked] = useState(0);
+
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8 space-y-6">
       {/* HEADER - Responsive flex direction */}
@@ -54,6 +58,7 @@ const Dashboard = () => {
                   type="submit"
                   form="transaction-form"
                   className="w-full sm:w-auto"
+                  onClick={() => setIsClicked(prev => prev + 1)}
                 >
                   Add Transaction
                 </Button>
@@ -65,7 +70,7 @@ const Dashboard = () => {
 
       {/* SUMMARY CARDS - Responsive grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <SummaryCards />
+        <SummaryCards isClicked={isClicked}/>
       </div>
 
       {/* CHARTS SECTION - Responsive grid */}
