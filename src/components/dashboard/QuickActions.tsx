@@ -39,13 +39,15 @@ const QuickActions = () => {
                     Cancel
                   </Button>
                 </DialogClose>
-                <Button
-                  type="submit"
-                  form="transaction-form"
-                  className="w-full sm:w-auto"
-                >
-                  Add Transaction
-                </Button>
+                <DialogClose asChild>
+                  <Button
+                    type="submit"
+                    form="transaction-form"
+                    className="w-full sm:w-auto"
+                  >
+                    Add Transaction
+                  </Button>
+                </DialogClose>
               </DialogFooter>
             </DialogContent>
           </Dialog>

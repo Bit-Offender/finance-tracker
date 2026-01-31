@@ -39,10 +39,8 @@ export default function TransactionCard() {
 
     if (error) {
       console.error("Error uploading:", error);
-      alert(`Error: ${error.message}`);
     } else {
       console.log("Successfully inserted:", data);
-      alert("Transaction added successfully!");
       setAmount("0");
       setTransactionType("INCOME");
     }
