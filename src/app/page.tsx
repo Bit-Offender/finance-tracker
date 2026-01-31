@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import LandingNavbar from "@/components/LandingNavbar";
-import CallToAction from "@/components/landing-page/CallToAction";
-import Hero from "@/components/landing-page/Hero";
-import Content from "@/components/landing-page/Content";
-import Footer from "@/components/Footer";
+import CallToAction from "@/components/landing-page/callToAction";
+import Hero from "@/components/landing-page/hero";
+import Content from "@/components/landing-page/content";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
