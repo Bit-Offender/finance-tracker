@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "../ui/dialog";
-import TransactionCard from "./transactionCard";
+import TransactionCard from "./TransactionCard";
 
 const QuickActions = () => {
   return (

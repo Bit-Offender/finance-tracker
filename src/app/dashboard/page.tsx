@@ -10,12 +10,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import TransactionCard from "@/components/dashboard/transactionCard";
+import TransactionCard from "@/components/dashboard/TransactionCard";
 import { Plus } from "lucide-react";
-import SummaryCards from "@/components/dashboard/summaryCards";
-import Charts from "@/components/dashboard/charts";
-import RecentTransactions from "@/components/dashboard/recentTransactions";
-import QuickActions from "@/components/dashboard/quickActions";
+import SummaryCards from "@/components/dashboard/SummaryCards";
+import Charts from "@/components/dashboard/Charts";
+import RecentTransactions from "@/components/dashboard/RecentTransactions";
+import QuickActions from "@/components/dashboard/QuickActions";
 
 const Dashboard = () => {
   return (
