@@ -20,7 +20,11 @@ import { useState } from "react";
 
 const Dashboard = () => {
 
-  const[isClicked, setIsClicked] = useState(0);
+  const[refreshKey, setRefreshKey] = useState(0);
+
+  const handleTransactionAdded = () => {
+    setRefreshKey(prev => prev + 1);
+  }
 
   return (
     <div className="min-h-screen p-4 sm:p-6 lg:p-8 space-y-6">
@@ -46,7 +50,7 @@ const Dashboard = () => {
             <DialogHeader className="sr-only">
               <DialogTitle>Add Transaction</DialogTitle>
             </DialogHeader>
-            <TransactionCard />
+            <TransactionCard onTransactionAdded={handleTransactionAdded}/>
             <DialogFooter className="flex flex-col-reverse sm:flex-row gap-2">
               <DialogClose asChild>
                 <Button variant="outline" className="w-full sm:w-auto">
@@ -58,7 +62,6 @@ const Dashboard = () => {
                   type="submit"
                   form="transaction-form"
                   className="w-full sm:w-auto"
-                  onClick={() => setIsClicked(prev => prev + 1)}
                 >
                   Add Transaction
                 </Button>
@@ -70,7 +73,7 @@ const Dashboard = () => {
 
       {/* SUMMARY CARDS - Responsive grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        <SummaryCards isClicked={isClicked}/>
+        <SummaryCards key={refreshKey}/>
       </div>
 
       {/* CHARTS SECTION - Responsive grid */}
@@ -80,7 +83,7 @@ const Dashboard = () => {
 
       {/* RECENT TRANSACTIONS - Responsive layout */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
-        <RecentTransactions />
+        <RecentTransactions key={refreshKey}/>
         <QuickActions />
       </div>
     </div>

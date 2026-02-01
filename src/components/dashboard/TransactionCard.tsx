@@ -14,7 +14,11 @@ import { ChevronDown } from "lucide-react";
 import { useSupabaseClient } from "@/lib/supabase/client";
 import { useState } from "react";
 
-export default function TransactionCard() {
+interface TransactionCardProps {
+  onTransactionAdded?: () => void;
+}
+
+export default function TransactionCard({ onTransactionAdded }: TransactionCardProps) {
   const supabase = useSupabaseClient();
 
   const [amount, setAmount] = useState("0");
@@ -30,7 +34,6 @@ export default function TransactionCard() {
       type: transactionType,
     };
 
-    console.log("Attempting to insert:", newTransaction);
 
     const { data, error } = await supabase
       .from("transactions")
@@ -42,7 +45,8 @@ export default function TransactionCard() {
     } else {
       console.log("Successfully inserted:", data);
       setAmount("0");
-      setTransactionType("INCOME");
+      setTransactionType(transactionType);
+      onTransactionAdded?.();
     }
   };
 
