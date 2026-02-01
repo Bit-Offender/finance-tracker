@@ -22,11 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning className="m-0 p-0">
-        <body className={`${inter.className} m-0 p-0`} suppressHydrationWarning>
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className="m-0 p-0 overflow-x-hidden"
+      >
+        <body
+          className={`${inter.className} m-0 p-0 overflow-x-hidden`}
+          suppressHydrationWarning
+        >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <SidebarProvider>
-              {children}
+              <div className="w-full overflow-x-hidden">{children}</div>
             </SidebarProvider>
           </ThemeProvider>
         </body>
