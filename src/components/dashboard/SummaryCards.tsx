@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { TrendingDown, TrendingUp, Wallet } from "lucide-react";
+import { LoaderCircle, TrendingDown, TrendingUp, Wallet } from "lucide-react";
 import { useSupabaseClient } from "@/lib/supabase/client";
 import { useUser } from "@clerk/nextjs";
 
@@ -79,7 +79,7 @@ const SummaryCards = () => {
         </CardHeader>
         <CardContent>
           <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400">
-            {loading ? "Loading..." : `₹${incomeAmount.toFixed(2)}`}
+            {loading ? <LoaderCircle className="font-bold animate-spin size-10"/> : `₹${incomeAmount.toFixed(2)}`}
           </div>
           <p className="text-xs text-muted-foreground mt-1">This month</p>
         </CardContent>
@@ -97,7 +97,7 @@ const SummaryCards = () => {
         </CardHeader>
         <CardContent>
           <div className="text-2xl sm:text-3xl font-bold text-red-600 dark:text-red-400">
-            {loading ? "Loading..." : `₹${expenseAmount.toFixed(2)}`}
+            {loading ? <LoaderCircle className="font-bold animate-spin size-10"/> : `₹${expenseAmount.toFixed(2)}`}
           </div>
           <p className="text-xs text-muted-foreground mt-1">This month</p>
         </CardContent>
@@ -115,7 +115,7 @@ const SummaryCards = () => {
         </CardHeader>
         <CardContent>
           <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">
-            {loading ? "Loading..." : `₹${savings.toFixed(2)}`}
+            {loading ? <LoaderCircle className="font-bold animate-spin size-10"/> : `₹${savings.toFixed(2)}`}
           </div>
           <p className="text-xs text-muted-foreground mt-1">
             {loading ? "..." : `${savingsRate}% savings rate`}

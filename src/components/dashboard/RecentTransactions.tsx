@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { TrendingUp } from "lucide-react";
+import { LoaderCircle, TrendingUp } from "lucide-react";
 import { Button } from "../ui/button";
 import { useSupabaseClient } from "@/lib/supabase/client";
 import { useUser } from "@clerk/nextjs";
@@ -87,7 +87,7 @@ const RecentTransactions = () => {
       <CardContent>
         {loading ? (
           <div className="text-center py-8">
-            <p className="text-muted-foreground">Loading...</p>
+            <LoaderCircle className="font-bold animate-spin size-10"/>
           </div>
         ) : transactions.length > 0 ? (
           <Table>

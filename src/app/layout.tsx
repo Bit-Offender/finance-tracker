@@ -25,16 +25,13 @@ export default function RootLayout({
       <html
         lang="en"
         suppressHydrationWarning
-        className="m-0 p-0 overflow-x-hidden"
       >
         <body
-          className={`${inter.className} m-0 p-0 overflow-x-hidden`}
+          className={`${inter.className} m-0 p-0`}
           suppressHydrationWarning
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <SidebarProvider>
               <div className="w-full overflow-x-hidden">{children}</div>
-            </SidebarProvider>
           </ThemeProvider>
         </body>
       </html>
