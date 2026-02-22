@@ -67,7 +67,7 @@ const SummaryCards = () => {
 
   return (
     <>
-      {/* Income Card */}
+      
       <Card className="border-l-4 border-green-500 hover:shadow-lg transition-shadow">
         <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
           <CardTitle className="text-sm font-medium text-muted-foreground">
